@@ -1,0 +1,22 @@
+<?php
+// application/core/MY_Exceptions.php
+class MY_Exceptions extends CI_Exceptions {
+
+	public function show_404()
+	{
+		$CI =& get_instance();
+		if(!isset($_SESSION['BAG'])){
+			$_SESSION['BAG'] = array();
+			$_SESSION['last'] = array();
+			$_SESSION['total'] = array();
+			$_SESSION['total']['counts'] = 0;
+			$_SESSION['total']['price'] = 0;
+		}
+		$CI->load->database();
+		$cat = $CI->shop_model->get_all_category_nondb();
+		$CI->output->set_status_header('404');
+		$CI->load->view('error',array('allcategory'=>$cat));
+		echo $CI->output->get_output();
+		exit;
+	}
+}

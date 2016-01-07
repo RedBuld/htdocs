@@ -1,0 +1,176 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+#top-header{
+	height: 50px;
+	background: #283544;
+	border-bottom: 3px solid #1e2833;
+}
+#top-header .contact {
+  color:white;
+  padding: 10px;
+}
+#bottom-header{
+	height: 140px;
+	background: #23262d;
+}
+#header_bg {
+	position: relative;
+	margin-top: -50px;
+	width: 100%;
+	overflow: hidden;
+}
+#header_bg img {
+	width: 100%;
+}
+#logo {
+    text-align: center;
+}
+#logo a {
+    padding: 25px 0;
+    margin: 0px;
+    text-decoration: none !important;
+    display: block;
+}
+.dropdown-menu {
+	width: 100%;
+    bottom: 0;
+}
+/*MENU*/
+.menu {
+  z-index: 100;
+  border: 0;
+}
+.menu.fixed {
+  position: fixed;
+  top:0;
+  width: 100%;
+}
+.menu .container{
+	padding: 0;
+  width: 100% !important;
+}
+.hormenu {
+	background: #02979e none repeat scroll 0% 0%;
+  border-bottom: 3px solid #017e85;
+  border-right: 3px solid #017e85;
+  box-sizing: padding-box;
+}
+.hormenu a {
+  color:white;
+}
+.hormenu nav {
+  display: table;
+  margin: 0px;
+}
+.hormenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hormenu ul ul {
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  top: 160%;
+  box-sizing: content-box;
+  visibility: hidden;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+  border-bottom: 3px solid #017e85;
+  border-right: 3px solid #017e85;
+}
+.hormenu ul ul ul {
+  top: 0%;
+  left: 160%;
+}
+.hormenu ul ul li:hover > ul {
+  top: 0%;
+  left: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+.hormenu ul li:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.hormenu ul li {
+  float: left;
+  position: relative;
+  background-color: #02979e;
+  cursor: pointer;
+}
+.hormenu ul ul li { float: none; }
+.hormenu ul a {
+  text-decoration: none;
+  display: block;
+  color: #FFF;
+  padding: 10px 15px;
+  text-align: center;
+}
+.hormenu ul li:hover { background-color: #007373; }
+.hormenu ul li a:hover { background-color: #007373; }
+
+/**/
+.hero
+{
+  height: 500px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url('../image/home.jpg');
+  overflow: hidden;
+}
+.containe {
+    padding: 0 1.5em;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+}
+.hero-content
+{
+  padding: 10px;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  color: #fff;
+  font-size: 1.4em;
+  text-align: center;
+  text-shadow: 1px 2px 0 #000;
+}
+
+@media only screen and (min-width: 600px) {
+  .containe {
+      width: 85%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hero
+  {
+    height: 400px;
+  }
+  .containe {
+    width: 70%;
+  }
+}

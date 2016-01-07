@@ -1,0 +1,203 @@
+/**********************/
+/*Donat Gorbachev 2013*/
+/**********************/
+/*input[type=text], input[type=password] {
+	height: 30px !important;
+}
+zachem ty eto napisal???! izvrat chtoli!!!?
+*/
+input.span5, input#username.span4, input#password.span4 { height: 30px !important; }
+#loginForm {
+	margin-top: 7%;
+}
+#admin-panel-iframe {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	width: 98%;
+	height: 100%;
+	margin-top: 55px;
+	margin-left: 1%;
+	margin-right: 1%;
+	border: none;
+}
+#table-products {
+	color: #555;
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 10px;
+}
+#table-products-1 {
+	color: #555;
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 10px;
+}
+.btn_panel {
+	
+	width: 90%;
+	margin-left: 5%;
+}
+.btn_panel .btn {
+	width: 50%;
+}
+.btn_panel .btn i {
+	opacity: 0.75;
+}
+.i-search {
+	float: left;
+	width: 96%;
+	margin: 20px 2%;
+}
+.searchButSimple {
+	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+}
+#searchButE {
+	display: none;
+}
+.c-l {
+	font-size: 10pt;
+	color: #888;
+	margin-top: -10px;
+}
+textarea {
+	resize: none;
+}
+table {
+	border-collapse: collapse !important;
+}
+.btn {
+	cursor: pointer;
+}
+#userfile {
+	height:30px;
+	width:143px;
+	cursor: pointer;
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.upload-iframe {
+	/*width: 100%;*/
+	height: 50px;
+	border:none;
+	background: none !important;
+}
+.upload-iframe body {
+	background: none !important;
+}
+.upload-iframe form {
+	height: 50px;
+}
+.loaded-img {
+	border-radius: 5px;
+}
+#progBar {
+	/*display: block;*/
+}
+.loaded-img-xclose {
+	text-align: center;
+	font-size: 12pt;
+	position: relative;
+	width: 34px;
+	height: 34px;
+	opacity: 0.9;
+	display: none;
+}
+#btnSubmit {
+	display: none;
+	opacity: 0;
+}
+#for_img_loader img {
+	width: 100%;
+	border-radius: 5px;
+}
+.prod-img-show {
+	width: 100%;
+}
+.but-back {
+	float: right;
+}
+.btn-new {
+	position: absolute;
+	right: 2%;
+}
+.div-new {
+	position: absolute;
+	right: 2%;
+	height: 40px;
+}
+.div-ogr {
+	width: 1px;
+	height: 40px;
+}
+#sauces_all {
+	display: none;
+}
+.settings_div {
+	width: 96%;
+	margin-left: 2%;
+}
+.filters_div {
+	width: 96%;
+	margin-left: 2%;
+}
+.orders_div {
+	opacity: 0.9;
+	width: 96%;
+	margin-left: 2%;
+}
+.order-now {
+	width: 100%;
+}
+.oder-info {
+	list-style: none;
+}
+#order-check {
+	font-size: 10pt;
+	background: #FFF;
+}
+.order_counter {
+	font-style: normal;
+	font-weight: bold;
+}
+.underline_ {
+	color: #999;
+}
+#order-back {
+	opacity: 0.8;
+}
+#chCodeDiv {
+	margin-right: 10px;
+}
+#changeCategoryNum_input, #changeCategorySubname_input {
+	width: 96%;
+	margin-left: 2%;
+	margin-top: 20px;
+}
+.btn-del-del {
+	width: 48%;
+	margin-left: 2%;
+	opacity: 0.8;
+}
+.btn-ed-ed {
+	width: 48%;
+	margin-left: 2%;
+	opacity: 0.8;
+}
+.right-but {
+	float: right;
+}
+#table-products .btn {
+	opacity: 0.8;
+}
+#subname {
+	border-left: 0px;
+	border-radius: 0px;
+}
+#chCodeInp {
+width: 90px !important;
+}
