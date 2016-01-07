@@ -25,7 +25,7 @@ $(document).ready(function(){
 <div id="content">
 	<div class="col-sm-3">
 		<div class="filters">
-			<form name="form" action="" method="get">
+			<form name="form" action="" method="post">
   				<table>
 				<?php
 				foreach ($allfilters as $filter => $value) {
@@ -35,7 +35,7 @@ $(document).ready(function(){
 						foreach ($products as $product => $v) {
 							if(!in_array( $v[$value['parameter']] , $temp )){
 				                $temp[] = $v[$value['parameter']];
-				                echo '<tr><td>'.$v[$value['parameter']].'</td></tr>';
+				                echo '<tr><td><label><input type="checkbox" value="'.$v[$value['parameter']].'" name="'.$value['parameter'].'[]">'.$v[$value['parameter']].'</label></td></tr>';
 				            }
 						}
 					}
@@ -53,6 +53,7 @@ $(document).ready(function(){
 	<div class="col-sm-9">
 	<div class="row">
 	<?php
+		if(isset($test)) echo $test;
 	    /*foreach ($products as $key => $v) {
 	      $this->load->view('market/templates/product', array_merge($v, array('filters'=>$category['filters'])));
 	    }*/

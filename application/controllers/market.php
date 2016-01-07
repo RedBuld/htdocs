@@ -22,7 +22,16 @@ class Market extends CI_Controller {
 		$menu = $this->shop_model->get_multilevel_menu();
 		$settings = $this->shop_model->get_settings();
 		$allfilters = $this->shop_model->get_filters();
-		$this->load->view('market/index', array_merge($res, array('menu'=>$menu, 'settings'=>$settings, 'allfilters'=>$allfilters)));
+		$where = "";
+		if (!empty($_POST["filter"])) {
+			foreach ($allfilters as $filter => $value) {
+				if ($_POST[$value['parameter']])
+		    	{
+		    		$where .= implode(",", $_POST[$value['parameter']]);
+		    	}
+			}
+		}
+		$this->load->view('market/index', array_merge($res, array('menu'=>$menu, 'settings'=>$settings, 'allfilters'=>$allfilters,'test'=>$where)));
 	}
 
 	public function product($id)
