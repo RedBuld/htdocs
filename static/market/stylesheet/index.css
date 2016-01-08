@@ -129,48 +129,82 @@ time, mark, audio, video {
 .hormenu ul li:hover { background-color: #007373; }
 .hormenu ul li a:hover { background-color: #007373; }
 
-/**/
-.hero
-{
-  height: 500px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-image: url('../image/home.jpg');
-  overflow: hidden;
+/*Search*/
+.btn-search {
+  background:#02979e;
+  color: white;
+  border-right: 1px solid #017e85;
+  border-bottom: 3px solid #017e85;
+  outline: none !important;
 }
-.containe {
-    padding: 0 1.5em;
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 90%;
+.btn-search:hover {
+  background:#008B92;
+  color: white;
+  border-right: 1px solid #017e85;
+  border-bottom: 3px solid #017e85;
+  outline: none !important;
 }
-.hero-content
-{
-  padding: 10px;
-  padding-top: 100px;
-  padding-bottom: 40px;
-  color: #fff;
-  font-size: 1.4em;
+.btn-search:active {
+  background:#01777D;
+  color: white;
+  border-bottom: none;
+  border-right: none;
+  border-left: 1px solid #006B71;
+  border-top: 3px solid #006B71;
+  outline: none !important;
+}
+/*Products*/
+.product-filter {
+  margin-bottom: 30px;
+  position: relative;
+  background: #e2e2e2;
+  overflow: visible;
+  float: left;
+  width: 100%;
+}
+.product-filter button {
+  display: inline-block;
+  line-height: 40px;
   text-align: center;
-  text-shadow: 1px 2px 0 #000;
+  outline: none;
+  border: none;
 }
-
-@media only screen and (min-width: 600px) {
-  .containe {
-      width: 85%;
-  }
+.product-filter .limit-sort {
+  float: right;
+  padding: 0;
 }
-@media only screen and (min-width: 992px) {
-  .hero
-  {
-    height: 400px;
-  }
-  .containe {
-    width: 70%;
-  }
+.product-filter .display {
+  float: right;
+  margin-left: 0px;
+}
+.product-filter .display button, .btn-list, .btn-grid {
+  padding: 2px 15px 2px;
+  background: #e2e2e2;
+  color: #323232;
+  border: none;
+}
+.product-filter .display button.active, .product-filter .display button:hover, .btn-list.active, .btn-grid.active, .btn-list:hover, .btn-grid:hover {
+  background: #000;
+  color: #fff;
+}
+.product-filter button.btn-grid {
+  margin-right: -4px;
+}
+.product-filter .display button, .btn-list, .btn-grid {
+  padding: 2px 15px 2px;
+  background: #e2e2e2;
+  color: #323232;
+  border: none;
+}
+.item {
+  width: 98%;
+  border: 1px solid grey;
+  display: inline-block;
+  margin: 10px 1%;
+}
+.elem-2 {
+  width: 48%;
+}
+.elem-3 {
+  width: 31.3333333%;
 }

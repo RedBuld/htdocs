@@ -75,7 +75,8 @@ class Shop_Model extends CI_Model {
     public function get_filters()
     {
         $this->load->database();
-        $query = $this->db->get($this->FILTERS_TABLE)->result_array();
+        $data = [];
+        $query = $this->db->get_where($this->FILTERS_TABLE)->result_array();
         foreach ($query as $row => $val) {
             $data[$val['parameter']] = $val;
         }
@@ -85,12 +86,13 @@ class Shop_Model extends CI_Model {
         $this->load->database();
         $query = $this->db->get_where($this->PRODUCTS_TABLE,array('category'=>$cat))->result_array();
     }
-    public function create_filter($name)
+    public function create_filter($name,$atr)
     {
         $this->load->database();
         $data = array(
             'name'=>$name,
-            'parameter'=>$this->getintranslit($name)
+            'parameter'=>$this->getintranslit($name),
+            'atr'=>$atr
         );
         $query = $this->db->get_where($this->FILTERS_TABLE,array('name'=>$name),'1')->result_array();
         if(count($query)==0)
@@ -109,13 +111,14 @@ class Shop_Model extends CI_Model {
             return false;
         }
     }
-    public function update_filter($id,$name)
+    public function update_filter($id,$name,$atr)
     {
         $this->load->database();
         $query = $this->db->get_where($this->FILTERS_TABLE,array('id'=>$id),'1')->result_array();
         $data = array(
             'name'=>$name,
-            'parameter'=>$this->getintranslit($name)
+            'parameter'=>$this->getintranslit($name),
+            'atr'=>$atr
         );
         if(count($query)!=0)
         {
@@ -141,6 +144,15 @@ class Shop_Model extends CI_Model {
         if(count($filter)!=0)
         {
             $this->db->delete($this->FILTERS_TABLE,array('id'=>$id));
+            /**/
+            $cats = $this->db->get_where($this->CATEGORY_TABLE)->result_array();
+            foreach ($cats as $cat => $value) {
+                $filterz = explode(',',$value['filters']);
+                if(($key = array_search($id, $filterz)) !== false) {
+                    unset($filterz[$key]);
+                    $this->db->update($this->CATEGORY_TABLE,array('filters'=>implode(',',$filterz)));
+                }
+            }
             /**/
             $this->load->dbforge();
             $this->dbforge->drop_column($this->PRODUCT_TABLE, $filter[0]['parameter']);

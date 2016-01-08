@@ -21,7 +21,7 @@
 			$t = '';
 			foreach ($filters as $filter => $value) {
 				if($v[$value['parameter']]!='')
-					$t .= '<p>'.$value['name'].': '.$v[$value['parameter']].'</p>';
+					$t .= '<p>'.$value['name'].': '.$v[$value['parameter']].' '.$value['atr'].'</p>';
 			}
 			$y = $v['name'];
 			if(mb_strlen($v['name'], 'UTF-8')>100)

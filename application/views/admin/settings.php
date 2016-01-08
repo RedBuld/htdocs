@@ -48,8 +48,8 @@
 	        <?
 		        foreach ($filters as $filter => $info) {
 		        	echo '<div class="filtag btn-group">';
-			        	echo '<span class=" btn btn-primary" disabled>'.$info['name'].'</span>';
-			        	echo '<button type="button" class="btn btn-primary" onclick="editFilter('.$info['id'].',\''.$info['name'].'\');"><i class="fa fa-pencil"></i></button>';
+			        	echo '<span class=" btn btn-primary" disabled>'.$info['name'].' ('.$info['atr'].')</span>';
+			        	echo '<button type="button" class="btn btn-primary" onclick="editFilter('.$info['id'].',\''.$info['name'].'\',\''.$info['atr'].'\');"><i class="fa fa-pencil"></i></button>';
 		        	echo '</div>';
 		        }
 	        ?>

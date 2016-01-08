@@ -189,7 +189,13 @@ class Admin extends CI_Controller {
 			return show_404();
 		if(isset($_GET['name']))
 		{
-			if($this->shop_model->create_filter($_GET['name']))
+			if(!isset($_GET['atr']))
+			{
+				$atr = '';
+			}else{
+				$atr = $_GET['atr'];
+			}
+			if($this->shop_model->create_filter($_GET['name'],$_GET['atr']))
 			{
 				$_SESSION['warning']['text'] = $this->FILTER_CREATE_SUCCESS;
 				$_SESSION['warning']['type'] = 'success';
@@ -212,7 +218,13 @@ class Admin extends CI_Controller {
 			return show_404();
 		if(isset($_GET['name'])&&isset($_GET['id']))
 		{
-			if($this->shop_model->update_filter($_GET['id'],$_GET['name']))
+			if(!isset($_GET['atr']))
+			{
+				$atr = '';
+			}else{
+				$atr = $_GET['atr'];
+			}
+			if($this->shop_model->update_filter($_GET['id'],$_GET['name'],$atr))
 			{
 				$_SESSION['warning']['text'] = $this->FILTER_UPDATE_SUCCESS;
 				$_SESSION['warning']['type'] = 'success';

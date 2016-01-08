@@ -537,26 +537,29 @@ createFilter = function() {
   var a, b, c;
   a = new Btn('a', 'Отмена', '', true);
   b = new Btn('button', 'Создать', 'btn-primary', false);
-  c = new Modal('Создание фильтра','<input type="text" value="' + name + '" placeholder="Название" class="form-control" id="filter_name">', [a, b], true, 200);
+  c = new Modal('Создание фильтра','<div class="form-group"><div class="col-xs-8"><label for="filter_name">Название</label><input type="text" placeholder="Название" class="form-control" id="filter_name"></div><div class="col-xs-4"><label for="filter_atr">Атрибут</label><input type="text" placeholder="Атрибут" class="form-control" id="filter_atr"></div></div><br><br>', [a, b], true, 200);
   c.create();
   c.show();
   b.setOnclick(function() {
-    document.location.href = base_url + 'admin/create_filter?name=' + $('#filter_name').val();
+    document.location.href = base_url + 'admin/create_filter?name=' + $('#filter_name').val()+'&atr=' + $('#filter_atr').val();
   });
 };
 
-editFilter = function(id,name) {
+editFilter = function(id,name,atr) {
   var a, b, c, d;
   a = new Btn('a', 'Отмена', '', true);
   b = new Btn('button', 'Изменить', 'btn-primary', false);
   c = new Btn('button', 'Удалить', 'btn-danger', false);
-  d = new Modal('Управление фильтром','<input type="text" value="' + name + '" placeholder="Название" class="form-control" id="filter_name">', [a, b, c], true, 200);
+  d = new Modal('Управление фильтром','<div class="form-group"><div class="col-xs-8"><label for="filter_name">Название</label><input type="text" value="' + name + '" placeholder="Название" class="form-control" id="filter_name"></div><div class="col-xs-4"><label for="filter_atr">Атрибут</label><input type="text" value="' + atr + '" placeholder="Атрибут" class="form-control" id="filter_atr"></div></div><br><br>', [a, b, c], true, 200);
   d.create();
   d.show();
   b.setOnclick(function() {
-    document.location.href = base_url + 'admin/update_filter?id=' + id + '&name=' + $('#filter_name').val();
+    document.location.href = base_url + 'admin/update_filter?id=' + id + '&name=' + $('#filter_name').val() + '&atr=' + $('#filter_atr').val();
   });
   c.setOnclick(function() {
     document.location.href = base_url + 'admin/delete_filter/' + id;
   });
 };
+/*
+<div class="form-group"><div class="col-xs-12"><label for="type">Тип</label><br><div class="btn-group" data-toggle="buttons"><label class="btn btn-warning active"><input type="radio" name="type" id="checkbox" value="0" checked>Чекбоскс</label><label class="btn btn-warning"><input type="radio" name="type" id="range" value="1">Диапазон</label><label class="btn btn-warning"><input type="radio" name="type" id="radio" value="2">Радио</label></div></div></div>
+*/

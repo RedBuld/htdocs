@@ -84,8 +84,11 @@
 					<?php
 						foreach ($forfilters as $filter => $value) {
 							echo '<div class="form-group">';
-							echo '<label for="'.$value['parameter'].'">'.$value['name'].': </label>';
-							echo '<input id="'.$value['parameter'].'" name="'.$value['parameter'].'" placeholder="'.$value['name'].'" value="'.$$value['parameter'].'" class="form-control">';
+								echo '<label for="'.$value['parameter'].'">'.$value['name'].': </label>';
+								echo '<div class="input-group">';
+									echo '<input id="'.$value['parameter'].'" name="'.$value['parameter'].'" placeholder="'.$value['name'].'" value="'.$$value['parameter'].'" class="form-control">';
+									echo '<span class="input-group-addon">'.$value['atr'].'</span>';
+								echo '</div>';
 							echo '</div>';
 						}
 					?>

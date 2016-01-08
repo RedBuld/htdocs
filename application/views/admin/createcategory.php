@@ -62,7 +62,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="for_filters">Фильтры: </label>
+						<label for="for_filters">Фильтры: <a href="/admin/settings?f" class="btn btn-primary"><i class="fa fa-plus"></i></a></label>
 						<input type="hidden" name="filters" id="filters" value="<?=$filters?>">
 						<select id="for_filters" class="form-control" placeholder="Фильтры" multiple>
 							<?php
